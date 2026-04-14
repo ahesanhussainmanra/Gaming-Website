@@ -3,52 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact UltraGamingHub for support, collaboration and guide requests.">
   <title>UltraGamingHub | Contact</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
-<body data-page="contact" data-top-title="Contact UltraGamingHub" data-top-subtitle="Support, collaboration and content requests.">
+<body>
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="index.html">UltraGamingHub</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="article.html">Article</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="page">
-    <section class="hero" data-reveal>
-      <h2>Reach The Team Safely</h2>
-      <p>Use official channels only. Do not share passwords, OTPs, payment PIN or sensitive account data.</p>
-    </section>
+    <section class="section">
+      <p class="eyebrow">Contact</p>
+      <h1>Send Your Query</h1>
+      <p class="lead">For guide requests, collaboration or feedback, use the details below.</p>
 
-    <section class="section" data-reveal>
-      <div class="contact-grid">
-        <article class="card">
-          <h3>Official Channels</h3>
-          <p>Email: contact@ultragaminghub.com</p>
-          <p>Instagram: @ultragaminghub</p>
-          <p>Discord: UltraGamingHub Community</p>
-          <p>Avg reply window: 24 hours</p>
-        </article>
+      <div class="contact-layout">
+        <div class="card">
+          <h2>Official Channels</h2>
+          <ul>
+            <li>Email: contact@ultragaminghub.com</li>
+            <li>Instagram: @ultragaminghub</li>
+            <li>Discord: UltraGamingHub Community</li>
+          </ul>
+          <p class="note">Do not share passwords, OTPs or payment secrets.</p>
+        </div>
 
-        <article class="card">
-          <h3>Send Message</h3>
-          <form>
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required>
+        <form class="card" action="#" method="post">
+          <h2>Message Form</h2>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
 
-            <label for="topic">Topic</label>
-            <select id="topic" name="topic">
-              <option>Guide Request</option>
-              <option>Gear Recommendation</option>
-              <option>Community Support</option>
-              <option>Partnership Query</option>
-            </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Write your message"></textarea>
-
-            <button type="button">Send Message</button>
-          </form>
-        </article>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <p>Copyright 2026 UltraGamingHub. All rights reserved.</p>
+  </footer>
 </body>
 </html>
