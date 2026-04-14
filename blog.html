@@ -1,45 +1,91 @@
-<h2>Latest Articles</h2>
-
-<ul>
-  <li><a href="article1.html">Best Gaming Mouse Under 500</a></li>
-  <li><a href="article2.html">Free Fire Sensitivity Settings</a></li>
-</ul>
-
-<h2>Latest Articles</h2>
-
-<div class="card">
-  <h3>Best Gaming Mouse Under 500</h3>
-  <p>Top budget gaming mouse list...</p>
-</div>
-
-<div class="card">
-  <h3>Free Fire Sensitivity Settings</h3>
-  <p>Perfect headshot settings...</p>
-</div>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Blog - UltraGamingHub</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UltraGamingHub | Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-<header class="navbar">
-  <h1>UltraGamingHub</h1>
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
-</header>
-
-<section class="blog">
-  <h2>Latest Articles</h2>
-
-  <div class="card">
-    <h3>Best Gaming Mouse Under 500</h3>
-    <a href="article.html">Read More</a>
+  <div class="top-strip">
+    <h1>UltraGamingHub Blog</h1>
+    <p>Weekly updates on gameplay, gear and esports trends.</p>
   </div>
 
-</section>
+  <header class="site-header">
+    <a class="brand" href="index.html">Ultra<span>GamingHub</span></a>
+    <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Open navigation">Menu</button>
+    <nav class="site-nav" data-site-nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="blog.html">Blog</a>
+      <a href="article.html">Article</a>
+      <a href="guides.html">Guides</a>
+      <a href="accessories.html">Accessories</a>
+      <a href="fps-boost.html">FPS Boost</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="esports.html">Esports</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
+  <main class="page">
+    <section class="hero" data-reveal>
+      <h2>Latest Gaming Articles</h2>
+      <p>Concise reads you can finish quickly and apply in your next session.</p>
+      <div class="chip-row">
+        <a class="chip" href="article.html">Featured Article</a>
+        <a class="chip" href="guides.html">Training Guides</a>
+        <a class="chip" href="reviews.html">New Reviews</a>
+      </div>
+    </section>
+
+    <section class="section" data-reveal>
+      <h3 class="section-title">Fresh Posts</h3>
+      <div class="grid">
+        <article class="card">
+          <p class="meta">April 2026 | Aim Training</p>
+          <h3>Headshot Routine For Ranked Push</h3>
+          <p>Simple warm-up + tracking drill set to sharpen consistency before competitive matches.</p>
+          <a class="btn-link" href="article.html">Read Post</a>
+        </article>
+        <article class="card">
+          <p class="meta">April 2026 | Setup</p>
+          <h3>Best Starter Setup Under Rs 10,000</h3>
+          <p>Balanced combo list for keyboard, mouse, pad and headset without wasting budget.</p>
+          <a class="btn-link" href="accessories.html">See Setup</a>
+        </article>
+        <article class="card">
+          <p class="meta">April 2026 | Performance</p>
+          <h3>Boost FPS on Mid-Range Laptop</h3>
+          <p>Power plan, GPU profile and background cleanup guide for smoother gameplay.</p>
+          <a class="btn-link" href="fps-boost.html">Optimize Now</a>
+        </article>
+        <article class="card">
+          <p class="meta">April 2026 | Esports</p>
+          <h3>What Changed in the Current Meta</h3>
+          <p>Quick explanation of pick-rate shifts and why specific strategies are dominating.</p>
+          <a class="btn-link" href="esports.html">Meta Notes</a>
+        </article>
+        <article class="card">
+          <p class="meta">April 2026 | Reviews</p>
+          <h3>New Mouse Sensor Test Results</h3>
+          <p>Latency, glide and click consistency comparison for top budget models.</p>
+          <a class="btn-link" href="reviews.html">Open Review</a>
+        </article>
+        <article class="card">
+          <p class="meta">April 2026 | Community</p>
+          <h3>How To Build Your Practice Plan</h3>
+          <p>A practical weekly schedule for students and working gamers with limited time.</p>
+          <a class="btn-link" href="guides.html">Get Plan</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Copyright <span data-year></span> UltraGamingHub. All rights reserved.
+  </footer>
 </body>
 </html>

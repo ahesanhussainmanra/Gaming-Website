@@ -1,65 +1,99 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Ultra Gaming Hub</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-  <h1>Ultra Gaming Hub</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="blog.html">Blog</a>
-  </nav>
-</header>
-
-<section>
-  <h2>Welcome to Ultra Gaming Hub 🎮</h2>
-  <p>Best gaming tips, tricks and accessories guides</p>
-</section>
-
-</body>
-</html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ultra Gaming Hub</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UltraGamingHub | Home</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <div class="top-strip">
+    <h1>Welcome to Ultra Gaming Hub</h1>
+    <p>Best gaming tips, tricks and accessories guides.</p>
+  </div>
 
-<header class="navbar">
-  <h1>UltraGamingHub</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="blog.html">Blog</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <a class="brand" href="index.html">Ultra<span>GamingHub</span></a>
+    <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Open navigation">Menu</button>
+    <nav class="site-nav" data-site-nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="article.html">Article</a>
+      <a href="guides.html">Guides</a>
+      <a href="accessories.html">Accessories</a>
+      <a href="fps-boost.html">FPS Boost</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="esports.html">Esports</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero">
-  <h2>Level Up Your Gaming 🎮</h2>
-  <p>Best Gaming Tips, Tricks & Gear Guides</p>
-  <button>Explore Now</button>
-</section>
+  <main class="page">
+    <section class="hero" data-reveal>
+      <h2>Level Up Your Gaming</h2>
+      <p>Actionable guides for high FPS, better aim, smarter gear buys and faster progression.</p>
+      <div class="chip-row">
+        <a class="chip" href="guides.html">Gaming Tips</a>
+        <a class="chip" href="accessories.html">Accessories</a>
+        <a class="chip" href="fps-boost.html">FPS Boost</a>
+      </div>
+    </section>
 
-<section class="cards">
-  <div class="card">🔥 Best Gaming Mouse</div>
-  <div class="card">⚡ FPS Boost Guide</div>
-  <div class="card">🎯 Headshot Tricks</div>
-</section>
+    <section class="section" data-reveal>
+      <h3 class="section-title">Start Here</h3>
+      <p class="section-sub">Quick pathways based on what you want to improve right now.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Improve Aim in 7 Days</h3>
+          <p>Daily drills and sensitivity calibration for stable headshots.</p>
+          <a class="btn-link" href="guides.html">Open Guide</a>
+        </article>
+        <article class="card">
+          <h3>Budget Gaming Setup</h3>
+          <p>Mouse, keyboard and headset combos that perform above price.</p>
+          <a class="btn-link" href="accessories.html">See Picks</a>
+        </article>
+        <article class="card">
+          <h3>PC Performance Fixes</h3>
+          <p>Reduce stutter, improve frame pacing and lower input delay.</p>
+          <a class="btn-link" href="fps-boost.html">Tune PC</a>
+        </article>
+        <article class="card">
+          <h3>Latest Reviews</h3>
+          <p>Honest ratings for games and peripherals before you spend.</p>
+          <a class="btn-link" href="reviews.html">Read Reviews</a>
+        </article>
+        <article class="card">
+          <h3>Esports Calendar</h3>
+          <p>Upcoming events, patch meta notes and match watchlist.</p>
+          <a class="btn-link" href="esports.html">Watch Now</a>
+        </article>
+        <article class="card">
+          <h3>Fresh Blog Posts</h3>
+          <p>Weekly content drops for guides, news and pro tips.</p>
+          <a class="btn-link" href="blog.html">Go to Blog</a>
+        </article>
+      </div>
+    </section>
 
-<footer>
-  <p>© 2026 Ultra Gaming Hub</p>
-</footer>
+    <section class="section" data-reveal>
+      <div class="callout">
+        <h3 class="section-title">Why UltraGamingHub</h3>
+        <p class="section-sub">Every page is designed for fast reading: less noise, more practical output.</p>
+        <div class="stats">
+          <div class="stat"><strong>120+</strong><span>Guides Planned</span></div>
+          <div class="stat"><strong>10</strong><span>Core Pages Live</span></div>
+          <div class="stat"><strong>24x7</strong><span>Community Focus</span></div>
+          <div class="stat"><strong>Pro</strong><span>Neon UI Theme</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script src="script.js"></script>
+  <footer class="footer">
+    Copyright <span data-year></span> UltraGamingHub. All rights reserved.
+  </footer>
 </body>
 </html>
