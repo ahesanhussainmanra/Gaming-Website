@@ -1,0 +1,19 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #0f172a;
+  color: white;
+}
+
+header {
+  background: #020617;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: #38bdf8;
+  margin: 10px;
+  text-decoration: none;
+}
