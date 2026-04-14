@@ -67,5 +67,169 @@
 
 <script src="script.js"></script>
 <canvas id="bg"></canvas>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UltraGamingHub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg,#020617,#0f172a);
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
+
+.navbar h1 {
+  font-family: 'Orbitron';
+  background: linear-gradient(90deg,#38bdf8,#9333ea);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* HERO */
+.slider {
+  height: 300px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.slide {
+  position:absolute;
+  opacity:0;
+  font-size:30px;
+  transition:1s;
+}
+
+.slide.active {
+  opacity:1;
+}
+
+/* CARDS */
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:40px;
+}
+
+.card {
+  padding:20px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 20px #38bdf8;
+}
+
+/* BLOG */
+.blog {
+  padding:40px;
+}
+
+.blog-card {
+  background:#020617;
+  margin-bottom:20px;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <h1>UltraGamingHub</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#blog">Blog</a>
+  </nav>
+</header>
+
+<!-- SLIDER -->
+<div class="slider">
+  <div class="slide active">🎮 Gaming Tips & Tricks</div>
+  <div class="slide">🔥 Best Accessories</div>
+  <div class="slide">⚡ Boost Your FPS</div>
+</div>
+
+<!-- CARDS -->
+<section class="cards">
+  <div class="card">Best Gaming Mouse Under 500</div>
+  <div class="card">Free Fire Headshot Settings</div>
+  <div class="card">Lag Fix Guide</div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" class="blog">
+  <h2>Latest Articles</h2>
+
+  <div class="blog-card">
+    <h3>Best Gaming Mouse Under 500</h3>
+    <p>Top budget gaming mouse for smooth gameplay.</p>
+  </div>
+
+  <div class="blog-card">
+    <h3>Free Fire Sensitivity Settings</h3>
+    <p>Perfect headshot settings for pro gameplay.</p>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 UltraGamingHub</p>
+</footer>
+
+<script>
+
+let slides=document.querySelectorAll('.slide');
+let index=0;
+
+setInterval(()=>{
+ slides[index].classList.remove('active');
+ index=(index+1)%slides.length;
+ slides[index].classList.add('active');
+},3000);
+
+</script>
+
+</body>
+</html>
 </body>
 </html>
