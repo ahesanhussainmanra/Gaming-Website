@@ -1,163 +1,60 @@
-(() => {
-  const NAV_ITEMS = [
-    { id: 'home', label: 'Home', href: 'index.html' },
-    { id: 'blog', label: 'Blog', href: 'blog.html' },
-    { id: 'article', label: 'Article', href: 'article.html' },
-    { id: 'guides', label: 'Guides', href: 'guides.html' },
-    { id: 'accessories', label: 'Accessories', href: 'accessories.html' },
-    { id: 'fps', label: 'FPS Boost', href: 'fps-boost.html' },
-    { id: 'reviews', label: 'Reviews', href: 'reviews.html' },
-    { id: 'esports', label: 'Esports', href: 'esports.html' },
-    { id: 'about', label: 'About', href: 'about.html' },
-    { id: 'contact', label: 'Contact', href: 'contact.html' }
-  ];
+document.querySelectorAll(".card").forEach(card => {
+  card.addEventListener("mouseover", () => {
+    card.style.transform = "scale(1.1)";
+  });
 
-  function createNode(tag, className, text) {
-    const node = document.createElement(tag);
-    if (className) {
-      node.className = className;
+  card.addEventListener("mouseout", () => {
+    card.style.transform = "scale(1)";
+  });
+});
+window.addEventListener("load", () => {
+  document.getElementById("loader").style.display = "none";
+});
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 3000);
+let elements = document.querySelectorAll(".fade-in");
+
+window.addEventListener("scroll", () => {
+  elements.forEach(el => {
+    let position = el.getBoundingClientRect().top;
+    if (position < window.innerHeight - 50) {
+      el.classList.add("show");
     }
-    if (typeof text === 'string') {
-      node.textContent = text;
-    }
-    return node;
-  }
+  });
+});
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
 
-  function injectTopStrip() {
-    if (document.querySelector('.top-strip')) {
-      return;
-    }
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-    const topTitle = document.body.dataset.topTitle || 'Ultra Gaming Hub';
-    const topSubtitle =
-      document.body.dataset.topSubtitle || 'Gaming tips, tricks and accessories guides.';
+let particles = [];
 
-    const strip = createNode('div', 'top-strip');
-    strip.appendChild(createNode('h1', '', topTitle));
-    strip.appendChild(createNode('p', '', topSubtitle));
+for (let i = 0; i < 100; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2
+  });
+}
 
-    document.body.prepend(strip);
-  }
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  function injectHeader() {
-    if (document.querySelector('.site-header')) {
-      return;
-    }
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = "#38bdf8";
+    ctx.fill();
+  });
 
-    const currentPage = document.body.dataset.page || '';
-    const header = createNode('header', 'site-header');
+  requestAnimationFrame(animate);
+}
 
-    const brand = createNode('a', 'brand');
-    brand.href = 'index.html';
-    brand.appendChild(document.createTextNode('Ultra'));
-    const brandAccent = createNode('span', '', 'GamingHub');
-    brand.appendChild(brandAccent);
-
-    const toggle = createNode('button', 'menu-toggle', 'Menu');
-    toggle.setAttribute('data-menu-toggle', '');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open navigation');
-
-    const nav = createNode('nav', 'site-nav');
-    nav.setAttribute('data-site-nav', '');
-
-    NAV_ITEMS.forEach((item) => {
-      const link = createNode('a', '', item.label);
-      link.href = item.href;
-      if (item.id === currentPage) {
-        link.classList.add('active');
-      }
-      nav.appendChild(link);
-    });
-
-    header.appendChild(brand);
-    header.appendChild(toggle);
-    header.appendChild(nav);
-
-    const main = document.querySelector('main');
-    if (main) {
-      main.before(header);
-    } else {
-      document.body.appendChild(header);
-    }
-  }
-
-  function injectFooter() {
-    if (document.querySelector('.footer')) {
-      return;
-    }
-
-    const note = document.body.dataset.footerNote || 'All rights reserved.';
-    const footer = createNode('footer', 'footer');
-
-    footer.appendChild(document.createTextNode('Copyright '));
-    const year = createNode('span');
-    year.setAttribute('data-year', '');
-    footer.appendChild(year);
-    footer.appendChild(document.createTextNode(' UltraGamingHub. ' + note));
-
-    document.body.appendChild(footer);
-  }
-
-  function bindMenuToggle() {
-    const navToggle = document.querySelector('[data-menu-toggle]');
-    const nav = document.querySelector('[data-site-nav]');
-
-    if (!navToggle || !nav) {
-      return;
-    }
-
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
-    });
-
-    nav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  function applyYear() {
-    const year = String(new Date().getFullYear());
-    document.querySelectorAll('[data-year]').forEach((node) => {
-      node.textContent = year;
-    });
-  }
-
-  function bindReveal() {
-    const revealItems = document.querySelectorAll('[data-reveal]');
-    if (revealItems.length === 0) {
-      return;
-    }
-
-    if (!('IntersectionObserver' in window)) {
-      revealItems.forEach((item) => item.classList.add('show'));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    revealItems.forEach((item) => observer.observe(item));
-  }
-
-  injectTopStrip();
-  injectHeader();
-  injectFooter();
-  bindMenuToggle();
-  applyYear();
-  bindReveal();
-})();
+animate();
